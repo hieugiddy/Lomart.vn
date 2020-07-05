@@ -5,7 +5,7 @@
     <input type="text" id="tentk" name="tentk" class="form-control" placeholder="Username" required>
 
     <label for="psw">Password</label>
-  	<input type="password" id="psw" name="mk" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" id="myPassword" class="form-control" placeholder="Password" required>
+  	<input type="password" id="psw" name="mk" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="myPassword" class="form-control" placeholder="Password" required>
 
     <button type="submit" class="btn btn-primary mt-3">Đăng ký</button>
   </form>

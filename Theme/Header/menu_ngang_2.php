@@ -1,10 +1,16 @@
+<?php
+if(!isset($_SESSION['chinhanh'])){
+	$_SESSION['chinhanh']='75 Cao Thắng, Thanh Bình, Q. Hải Châu, Đà Nẵng, Việt Nam';
+	$_SESSION['value']='dn';
+}
+?>
 <nav class="navbar navbar-expand-md bg-light d-flex menungang2">
 	<div class="row justify-content-center mx-auto">
 			<a href="" class="logo mr-5"><img src="https://lomart.vn/dist/images/logo-lomart.png" alt="" width="200px"></a>
-			<select name="noio" id="noio" class="mr-4">
-				<option value="dn">Đà Nẵng</option>
-				<option value="hcm">Hồ Chí Minh</option>
-				<option value="hn">Hà Nội</option>
+			<select name="noio" id="noio" class="mr-4" onchange="doichinhanh(this)">
+				<option value="dn" <?php if($_SESSION['value']=="dn") echo 'selected';?> >Đà Nẵng</option>
+				<option value="hcm" <?php if($_SESSION['value']=="hcm") echo 'selected';?> >Hồ Chí Minh</option>
+				<option value="hn" <?php if($_SESSION['value']=="hn") echo 'selected';?> >Hà Nội</option>
 			</select>
 			<ul id="menu" class="navbar-nav mr-5 d-block d-md-flex mt-4 mt-md-0 px-1 px-md-0">
 				<li class="nav-item"><a href="?Layout=chuyenmuc&id=a001&idc=a001_all" class="nav-link">Thịt & Cá</a></li>
@@ -29,3 +35,9 @@
 			</script>
 	</div>
 </nav>
+<script>
+	function doichinhanh(obj){
+		var value=obj.value;
+		location.href="./Theme/Header/doichinhanh.php?lc_chinhanh="+value;
+	}
+</script>

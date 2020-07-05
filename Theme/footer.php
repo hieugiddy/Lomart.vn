@@ -1,3 +1,11 @@
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'vi'}, 'translate_select');
+    }
+</script>
+
 <script language="javascript">
     	var geocoder, location1, location2;
 		function initialize() {
@@ -42,7 +50,7 @@
             document.getElementById('khoangcach').innerHTML = kmdistance;
             if(kmdistance<=12 || tienhang.value=="0đ"){
             	document.getElementById('vanchuyen').value = "0đ";
-            	document.getElementById('tongtien').value = "~ "+parseFloat(tienhang.value)+"đ";
+            	document.getElementById('tongtien').value = parseFloat(tienhang.value);
     		}
             else{
             	var tt=0.05*parseFloat(tienhang.value)+0.05*kmdistance;
@@ -102,23 +110,6 @@ for (i = 0; i < dropdown.length; i++) {
 </script>
 <footer>
 	<br><br>
-	<div class="col-12 col-sm-11 col-md-10 col-lg-9 mx-auto tuyendung">
-		<h5>TRỞ THÀNH CHIẾN BINH LOMART NGAY HÔM NAY</h5>
-		<div class="td_bk">
-			<div id="lammo" class="col-12">
-				<div class="row">
-					<div class="td-noidung col-12 col-lg-10 px-3">
-						<h5><strong>TRỞ THÀNH CHIẾN BINH LOMART - NHANH VÀ MIỄN PHÍ</strong></h5>
-						<p>Dễ dàng trở thành chiến binh của Lomart</p>
-						<p>Lomart - ứng dụng giao thực phẩm trong vòng 1 giờ - với xe máy của chính mình và điện thoại Android hoặc iPhone.</p>
-					</div>
-					<div class="td-nut col-md-2 mb-3">
-						<button type="button" class="btn btn-success mt-4 mt-md-0" data-toggle="modal" data-target="#dk-tuyendung">Đăng ký</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div id="footer">
 		<div class="row">
 		<div class="col-12 col-sm-6 mx-auto col-md-7 col-lg-4 gt px-2 px-md-3 px-xl-4 mb-5">

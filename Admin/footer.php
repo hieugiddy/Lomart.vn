@@ -1,7 +1,26 @@
 <script>
+function home(){
+  location.href="/Lomart.vn/Admin/";
+}
+function theloai(){
+  location.href="/Lomart.vn/Admin/?menu=theloai";
+}
+function sanpham(){
+  location.href="/Lomart.vn/Admin/?menu=sanpham";
+}
+function khachhang(){
+  location.href="/Lomart.vn/Admin/?menu=khachhang";
+}
+function donhang(){
+  location.href="/Lomart.vn/Admin/?menu=donhang";
+}
+function caidat(){
+  location.href="/Lomart.vn/Admin/?menu=caidat";
+}
 function thoat(){
   location.href="/Lomart.vn";
 }
+
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");

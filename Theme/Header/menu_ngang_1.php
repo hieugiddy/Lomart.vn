@@ -1,17 +1,7 @@
 <nav class="menungang1 d-none d-md-block">
 	<div class="row justify-content-center px-2">
-		<div class="col-xl-1 col-md-2 mb-2 mb-md-0">
-			 <div class="btn-group">
-	            <button class="btn dropdown-toggle"
-	               type="button"
-	               id="dropdownMenuButton" data-toggle="dropdown">
-	             Ngôn Ngữ
-	            </button>
-	            <div class="dropdown-menu">
-	               <a class="dropdown-item" href="#">Tiếng Việt</a>
-	               <a class="dropdown-item" href="#">English</a>
-	            </div>
-	         </div>
+		<div class="col-xl-1 col-md-2 mb-2 mb-md-0 mr-5">
+			 <div id="translate_select"></div>
 		</div>
 		<div class="col-xl-5 col-md-6 mb-2 mb-md-0">
 			<span>Tải ứng dụng Lomart:&nbsp;</span>

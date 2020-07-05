@@ -37,7 +37,8 @@
 			<div class="col-9">
 				<p><strong>Tên sản phẩm</strong></p>
 			<p id="giatien">200.000đ</p>
-			<form action="" class="mt-3">
+			<form action="./Theme/giohang/themsanpham.php" class="mt-3">
+				<input type="hiden" name="id" value="'.$_GET['id'].'"/>
 				<input type="text" name="soluong" value="1" style="padding: 5px;width: 40px;text-align:center;margin-right: 10px" />
 				<input type="submit" value="Thêm vào giỏ hàng" style="padding: 6px 10px; border:0;color: #fff;background: #900;cursor: pointer;" />
 			</form>
@@ -47,57 +48,7 @@
 		<div id="gt-ctsp" class="row text-justify">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quia dignissimos placeat asperiores similique libero explicabo laudantium, ipsum, nihil repellendus error. Repellat iste magnam rerum atque consectetur quidem, sequi aperiam.
 		</div>
-		<h4 class="mt-5 mb-3">Sản phẩm cùng loại</h4>
-		<div class="row">
-			<a href="" class="link-item" title="Sản phẩm 1">
-			<div class="yeuthich_item col-md-4 mb-4 px-2">
-				<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
-				<p>Bánh Chocopie Orion 198g</p>
-				<strong>37.000 đ</strong>
-				<a href="" class="them-sp">+Thêm</a></div>
-			</div>
-			</a>
-			<a href="" class="link-item" title="Sản phẩm 1">
-			<div class="yeuthich_item col-md-4 mb-4 px-2">
-				<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
-				<p>Bánh Chocopie Orion 198g</p>
-				<strong>37.000 đ</strong>
-				<a href="" class="them-sp">+Thêm</a></div>
-			</div>
-			</a>
-			<a href="" class="link-item" title="Sản phẩm 1">
-			<div class="yeuthich_item col-md-4 mb-4 px-2">
-				<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
-				<p>Bánh Chocopie Orion 198g</p>
-				<strong>37.000 đ</strong>
-				<a href="" class="them-sp">+Thêm</a></div>
-			</div>
-			</a>
-			<a href="" class="link-item" title="Sản phẩm 1">
-			<div class="yeuthich_item col-md-4 mb-4 px-2">
-				<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
-				<p>Bánh Chocopie Orion 198g</p>
-				<strong>37.000 đ</strong>
-				<a href="" class="them-sp">+Thêm</a></div>
-			</div>
-			</a>
-			<a href="" class="link-item" title="Sản phẩm 1">
-			<div class="yeuthich_item col-md-4 mb-4 px-2">
-				<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
-				<p>Bánh Chocopie Orion 198g</p>
-				<strong>37.000 đ</strong>
-				<a href="" class="them-sp">+Thêm</a></div>
-			</div>
-			</a>
-			<a href="" class="link-item" title="Sản phẩm 1">
-			<div class="yeuthich_item col-md-4 mb-4 px-2">
-				<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
-				<p>Bánh Chocopie Orion 198g</p>
-				<strong>37.000 đ</strong>
-				<a href="" class="them-sp">+Thêm</a></div>
-			</div>
-			</a>
-		</div>
+		
 	
 	</div>
 	<div class="col-md-3 col-12 px-3">';
@@ -113,4 +64,58 @@
 	}
 	?>
 	</div>
+
+	<h4 class="mt-5 mb-3">Sản phẩm cùng loại</h4>
+	<div class="row">
+		<a href="" class="link-item" title="Sản phẩm 1">
+		<div class="yeuthich_item col-6 col-sm-4 col-md-3 col-lg-2 mb-4 px-2">
+			<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
+			<p>Bánh Chocopie Orion 198g</p>
+			<strong>37.000 đ</strong>
+			<a href="" class="them-sp">+Thêm</a></div>
+		</div>
+		</a>
+		<a href="" class="link-item" title="Sản phẩm 1">
+		<div class="yeuthich_item col-6 col-sm-4 col-md-3 col-lg-2 mb-4 px-2">
+			<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
+			<p>Bánh Chocopie Orion 198g</p>
+			<strong>37.000 đ</strong>
+			<a href="" class="them-sp">+Thêm</a></div>
+		</div>
+		</a>
+		<a href="" class="link-item" title="Sản phẩm 1">
+		<div class="yeuthich_item col-6 col-sm-4 col-md-3 col-lg-2 mb-4 px-2">
+			<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
+			<p>Bánh Chocopie Orion 198g</p>
+			<strong>37.000 đ</strong>
+			<a href="" class="them-sp">+Thêm</a></div>
+		</div>
+		</a>
+		<a href="" class="link-item" title="Sản phẩm 1">
+		<div class="yeuthich_item col-6 col-sm-4 col-md-3 col-lg-2 mb-4 px-2">
+			<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
+			<p>Bánh Chocopie Orion 198g</p>
+			<strong>37.000 đ</strong>
+			<a href="" class="them-sp">+Thêm</a></div>
+		</div>
+		</a>
+		<a href="" class="link-item" title="Sản phẩm 1">
+		<div class="yeuthich_item col-6 col-sm-4 col-md-3 col-lg-2 mb-4 px-2">
+			<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
+			<p>Bánh Chocopie Orion 198g</p>
+			<strong>37.000 đ</strong>
+			<a href="" class="them-sp">+Thêm</a></div>
+		</div>
+		</a>
+		<a href="" class="link-item" title="Sản phẩm 1">
+		<div class="yeuthich_item col-6 col-sm-4 col-md-3 col-lg-2 mb-4 px-2">
+			<div><img src="https://tea-3.lozi.vn/v1/ship/resized/sieu-thi-big-c-mien-dong-to-hien-thanh-quan-10-ho-chi-minh-1527673128954004931-593882-1527905538?w=128" alt="" width="100%"/>
+			<p>Bánh Chocopie Orion 198g</p>
+			<strong>37.000 đ</strong>
+			<a href="" class="them-sp">+Thêm</a></div>
+		</div>
+		</a>
+	</div>
+
+
 </div></div>

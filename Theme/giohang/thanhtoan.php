@@ -65,7 +65,7 @@ echo '<iframe src="./Theme/giohang/getdiachi.php" frameborder="0" width="100%" h
 
     			<strong>Email:&nbsp;</strong><input type="email" placeholder="Email..." name="mail"/><br>
 
-          <strong style="text-align: left;display: block;">Giao từ:&nbsp;&nbsp;&nbsp;<input type="text" name="address1" value="75 Cao Thắng, Thanh Bình, Q. Hải Châu, Đà Nẵng, Việt Nam" class="address_input" size="40" readonly/></strong>
+          <strong style="text-align: left;display: block;">Giao từ:&nbsp;&nbsp;&nbsp;<input type="text" name="address1" <?php echo 'value="'.$_SESSION['chinhanh'].'"';?> class="address_input" size="40" readonly/></strong>
 
     			<strong>Đến:&nbsp;</strong><input id="pac-input" class="address_input" type="text" placeholder="Nhập địa chỉ nhận hàng..." name="address2" <?php if(!isset($_GET['address2'])) echo 'value=""'; else echo 'value="'.$_GET['address2'].'"';?> readonly/>
           
@@ -81,6 +81,9 @@ echo '<iframe src="./Theme/giohang/getdiachi.php" frameborder="0" width="100%" h
           <p>(Miễn phí ship đơn hàng có khoảng cách không quá 12km, trên 12km chịu <span style="color: #900;font-weight: 700">5%*(Tiền hàng) + 5%*(Khoảng cách)</span> )</p><br>
 
           <strong style="text-align: left;display: block;">Tổng Tiền:&nbsp;&nbsp;&nbsp;~<input style="border: none;background: #fff;color: #900;font-weight: 700;width:100px" type="text" id="tongtien" value="" name="tongtien" readonly/>VNĐ</strong>
+          <br>
+          <input name="hinhthuc" type="radio" value="01" class="hinhthuc" checked/>&nbsp;Thanh toán khi nhận hàng <br>
+          <input name="hinhthuc" type="radio" value="02" class="hinhthuc"/>&nbsp;Thanh toán bằng Paypal
 
     			<input type="submit" id="thanhtoan1" value="Thanh toán"/>
 			</form>
