@@ -200,8 +200,8 @@ float: right;
   }
 }
 .item img {
-    width: 500px;
-    border-radius: 10px
+    width: 100%;
+    border-radius: 10px;
 }
 	</style>
 </head>
@@ -213,46 +213,40 @@ float: right;
                   <div class="carousel carousel-showmanymoveone slide" id="itemslider">
                     <div class="carousel-inner">
              
-                      <div class="item active">
-                        <div class="col-12 col-sm-6 col-md-4">
-                          <a href="#"><img src="https://tea-3.lozi.vn/v1/images/resized/banner-mobile-1246-1590130166?w=624&type=o" class="img-responsive center-block"></a>
-                        </div>
-                      </div>
-             
-                      <div class="item">
-                        <div class="col-12 col-sm-6 col-md-4">
-                          <a href="#"><img src="https://tea-3.lozi.vn/v1/images/resized/banner-mobile-1243-1590130193?w=704&type=o" class="img-responsive center-block"></a>
-                        </div>
-                      </div>
-             
-                      <div class="item">
-                        <div class="col-12 col-sm-6 col-md-4">
-                          <a href="#"><img src="https://tea-3.lozi.vn/v1/images/resized/banner-mobile-1246-1590130166?w=624&type=o" class="img-responsive center-block"></a>
-                        </div>
-                      </div>
-             
-                      <div class="item">
-                        <div class="col-12 col-sm-6 col-md-4">
-                          <a href="#"><img src="https://tea-3.lozi.vn/v1/images/resized/banner-mobile-1243-1590130193?w=704&type=o" class="img-responsive center-block"></a>
-                        </div>
-                      </div>
-             
-                      <div class="item">
-                        <div class="col-12 col-sm-6 col-md-4">
-                          <a href="#"><img src="https://tea-3.lozi.vn/v1/images/resized/banner-mobile-1246-1590130166?w=624&type=o" class="img-responsive center-block"></a>
-                        </div>
-                      </div>
-             
-                      <div class="item">
-                        <div class="col-12 col-sm-6 col-md-4">
-                          <a href="#"><img src="https://tea-3.lozi.vn/v1/images/resized/banner-mobile-1243-1590130193?w=704&type=o" class="img-responsive center-block"></a>
-                        </div>
-                      </div>
-                        <div class="item">
-                        <div class="col-12 col-sm-6 col-md-4">
-                          <a href="#"><img src="https://tea-3.lozi.vn/v1/images/resized/banner-mobile-1246-1590130166?w=624&type=o" class="img-responsive center-block"></a>
-                        </div>
-                      </div>
+                      <?php
+                        include('../connect.php');
+                        $hot=$conn->prepare('select * from khuyenmai');
+                        $hot->execute();
+                        if($hot->rowCount()>0){
+                          $i=1;
+                          while($row=$hot->fetch(PDO::FETCH_ASSOC)){
+                            if($i==1){
+                              echo '
+                                <div class="item active">
+                                  <div class="col-12 col-sm-6 col-md-4">
+                                    <a href="/Lomart.vn/?Layout=khuyenmai&stt='.$row['stt'].'" title="'.$row['tenkm'].'" target="_parent">
+                                      <img src="'.$row['hinhanh'].'" class="img-responsive center-block"><br>
+                                    </a>
+                                  </div>
+                                </div>
+                            ';
+                            $i=0;
+                          }
+                          else
+                            echo '
+                                <div class="item">
+                                  <div class="col-12 col-sm-6 col-md-4">
+                                    <a href="/Lomart.vn/?Layout=khuyenmai&stt='.$row['stt'].'" title="'.$row['tenkm'].'" target="_parent">
+                                      <img src="'.$row['hinhanh'].'" class="img-responsive center-block"><br>
+                                    </a>
+                                  </div>
+                                </div>
+                            ';
+                          }
+                        }
+                        else 
+                          echo 'Không có sản phẩm nào';
+                      ?>
                     </div>
             <!-- left,right control -->
                     

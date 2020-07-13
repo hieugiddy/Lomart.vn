@@ -1,6 +1,7 @@
 <?php
 ob_start();
-	session_start();
+session_start();
+include('Theme/connect.php');
 	?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -27,7 +28,7 @@ ob_start();
 	</title>
 	<?php include('Theme/head.php');?>
 </head>
-<body onload="initialize()">
+<body onload="tinh_khoang_cach()">
 	<?php include('Theme/header.php');?>
 	<?php include('Theme/dieuhuong.php');?>
 	</div>

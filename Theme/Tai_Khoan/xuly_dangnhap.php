@@ -2,12 +2,18 @@
 	include('../connect.php');
 	$user=$_POST['tentk'];
 	$pw=$_POST['mk'];
-	$cmd=@mysqli_query($connect,'select quyen from taikhoan where username="'.$user.'" and password="'.$pw.'"');
-	$kq=@mysqli_fetch_array($cmd);
-	if(@mysqli_num_rows($cmd)<=0){
+	$cmd=('select * from taikhoan where username="'.$user.'" and password="'.$pw.'"');
+	/*tạo 1 biến statement sử dụng cơ chế bảo mật Prepare để thực hiện câu truy vấn - giúp tránh được tấn công Sql*/
+	$stmt=$conn->prepare($cmd);
+	/*thực hiện câu truy vấn*/
+	$stmt->execute();
+	/* đếm số dòng trả về*/
+	if($stmt->rowCount()<=0){
 		echo '<script>alert(\'Tài khoản hoặc mật khẩu không tồn tại\');</script>';
 	}
-	else
+	else{
+		/*thiết lập cách trả về dữ liệu - FETCH_ASSOC trả về dữ liệu dạng mảng với key là tên cột trong bảng*/
+		$kq=$stmt->fetch(PDO::FETCH_ASSOC);
 		echo '<script>
 		if (typeof(Storage) !== "undefined") {
 			localStorage.setItem("user","'.$user.'");
@@ -15,6 +21,8 @@
 			localStorage.setItem("quyenhan","'.$kq['quyen'].'");
 		}
 	alert(\'Đăng nhập thành công\');</script>';
+	}
+	$conn=null;
 	echo '<script>location.href=\'/Lomart.vn\';</script>'
 	
 ?>

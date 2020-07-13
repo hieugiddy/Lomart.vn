@@ -1,3 +1,6 @@
+<?php
+  $conn=null;
+?>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
 <script type="text/javascript">
@@ -8,13 +11,13 @@
 
 <script language="javascript">
     	var geocoder, location1, location2;
-		function initialize() {
+		function tinh_khoang_cach() {
         geocoder = new GClientGeocoder();
         showLocation();
     }
 
     function showLocation() {
-        geocoder.getLocations(document.forms[2].address1.value, function (response) {
+        geocoder.getLocations(document.forms[3].address1.value, function (response) {
             if (!response || response.Status.code != 200)
             {
                 
@@ -22,7 +25,7 @@
             else
             {
                 location1 = {lat: response.Placemark[0].Point.coordinates[1], lon: response.Placemark[0].Point.coordinates[0], address: response.Placemark[0].address};
-                geocoder.getLocations(document.forms[2].address2.value, function (response) {
+                geocoder.getLocations(document.forms[3].address2.value, function (response) {
                     if (!response || response.Status.code != 200)
                     {
                         
@@ -48,8 +51,8 @@
             var tienhang=document.getElementById("tienhang");
 
             document.getElementById('khoangcach').innerHTML = kmdistance;
-            if(kmdistance<=12 || tienhang.value=="0đ"){
-            	document.getElementById('vanchuyen').value = "0đ";
+            if(kmdistance<=12 || tienhang.value=="0"){
+            	document.getElementById('vanchuyen').value = "0";
             	document.getElementById('tongtien').value = parseFloat(tienhang.value);
     		}
             else{

@@ -1,7 +1,7 @@
 <?php
  if($_POST['tentk']!="" && $_POST['mk']!=""){
 	include('../connect.php');
-	$cmd=@mysqli_query($connect,'insert into taikhoan(username,password) value("'.$_POST['tentk'].'","'.$_POST['mk'].'")');
+	$cmd='insert into taikhoan(username,password) value("'.$_POST['tentk'].'","'.$_POST['mk'].'")';
 	echo '<script>alert(\'Đăng ký thành công, xin mời đăng nhập\');</script>';
 }
  else

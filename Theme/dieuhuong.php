@@ -10,6 +10,9 @@
 		case 'timkiem':
 			include('timkiem/index.php');
 			break;
+		case 'khuyenmai':
+			include('khuyenmai/index.php');
+			break;
 		default:
 			include('home/index.php');
 			break;

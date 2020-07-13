@@ -1,15 +1,29 @@
 <?php
 ob_start();
 session_start();
+if(isset($_GET['id'])){
 	$id=$_GET['id'];
 	if(isset($_GET['xoa'])){
-	for($i=0;$i<count($_SESSION['sanpham_gh']);++$i){
-		if($_SESSION['sanpham_gh'][$i]==$id){
-			$_SESSION['sanpham_gh'][$i]="";
+		for($i=0;$i<count($_SESSION['sanpham_gh']);++$i){
+			if($_SESSION['sanpham_gh'][$i]==$id){
+				$_SESSION['sanpham_gh'][$i]="";
+				unset($_SESSION['tensanpham'][$i]);
+				unset($_SESSION['soluong'][$i]);
 			}
 		}
 	}
-	echo '
+}
+else{
+	for($i=0;$i<count($_SESSION['sanpham_gh']);++$i){
+		$maSP=$_SESSION['sanpham_gh'][$i];
+		if(isset($_POST[$maSP])){
+			$_SESSION['sanpham_gh'][$i]="";
+			unset($_SESSION['tensanpham'][$i]);
+			unset($_SESSION['soluong'][$i]);
+		}			
+	}
+}
+echo '
 <script>
 	history.back();
 </script>';

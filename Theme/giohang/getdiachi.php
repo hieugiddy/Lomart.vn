@@ -104,7 +104,7 @@ button:focus {
 </style>
 </head>
 <body>
-	<input id="pac-input" value="" class="controls" type="text" placeholder="Nhập địa chỉ nhận hàng..."/>
+	<input id="pac-input" value="" class="controls" type="text" placeholder="Nhập địa chỉ nhận hàng..." autofocus/>
   <a href="" id="chon" target="_parent" onclick="get_tk()">Chọn</a>
 	<br><br>
 	<div id="map"></div>

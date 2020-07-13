@@ -6,19 +6,21 @@ if(!isset($_SESSION['chinhanh'])){
 ?>
 <nav class="navbar navbar-expand-md bg-light d-flex menungang2">
 	<div class="row justify-content-center mx-auto">
-			<a href="" class="logo mr-5"><img src="https://lomart.vn/dist/images/logo-lomart.png" alt="" width="200px"></a>
+			<a href="/Lomart.vn" class="logo mr-5"><img src="https://lomart.vn/dist/images/logo-lomart.png" alt="" width="200px"></a>
 			<select name="noio" id="noio" class="mr-4" onchange="doichinhanh(this)">
 				<option value="dn" <?php if($_SESSION['value']=="dn") echo 'selected';?> >Đà Nẵng</option>
 				<option value="hcm" <?php if($_SESSION['value']=="hcm") echo 'selected';?> >Hồ Chí Minh</option>
 				<option value="hn" <?php if($_SESSION['value']=="hn") echo 'selected';?> >Hà Nội</option>
 			</select>
 			<ul id="menu" class="navbar-nav mr-5 d-block d-md-flex mt-4 mt-md-0 px-1 px-md-0">
-				<li class="nav-item"><a href="?Layout=chuyenmuc&id=a001&idc=a001_all" class="nav-link">Thịt & Cá</a></li>
-				<li class="nav-item"><a href="?Layout=chuyenmuc&id=a002&idc=a002_all" class="nav-link">Hải Sản</a></li>
-				<li class="nav-item"><a href="?Layout=chuyenmuc&id=a003&idc=a003_all" class="nav-link">Siêu thị</a></li>
-				<li class="nav-item"><a href="?Layout=chuyenmuc&id=a004&idc=a004_all" class="nav-link">Siêu thị</a></li>
-				<li class="nav-item"><a href="?Layout=chuyenmuc&id=a005&idc=a005_all" class="nav-link">Siêu thị</a></li>
-				<li class="nav-item"><a href="?Layout=chuyenmuc&id=a006&idc=a006_all" class="nav-link">Siêu thị</a></li>
+				<?php 
+					$list_menu=$conn->prepare('select * from theloai');
+					$list_menu->execute();
+					if($list_menu->rowCount()>0)
+						while($row=$list_menu->fetch(PDO::FETCH_ASSOC)){
+							echo '<li class="nav-item"><a href="?Layout=chuyenmuc&maTL='.$row['maTL'].'" class="nav-link">'.$row['tenTL'].'</a></li>';
+						}
+				?>
 				<li class="nav-item"><a href="?Layout=chuyenmuc" class="nav-link">Tất cả</a></li>
 			</ul>
 			<script>
