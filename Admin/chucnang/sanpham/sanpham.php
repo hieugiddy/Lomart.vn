@@ -13,7 +13,7 @@
 	$tongso_sp->execute();
 	$soSP=$tongso_sp->fetchcolumn();
 	/*tính số trang*/
-	$limit=6;/*số lượng sản phẩm sẽ hiển thị trên 1 trang*/
+	$limit=12;/*số lượng sản phẩm sẽ hiển thị trên 1 trang*/
 	$tongsotrang=ceil($soSP/$limit);
 	if(isset($_GET['page']))
 		$start=(((int) $_GET['page'])-1)*$limit;/*tính vị trí của sản phẩm đầu tiên sẽ hiển thị trong trang thứ X*/
@@ -84,7 +84,7 @@
 				else
 					echo '<a href="?menu=sanpham&page='.$i.'">'.$i.'</a>'; 
 		}						
-		echo '</div></center>';
+		echo '</div></center><br/><br/>';
 	}
 ?>
 

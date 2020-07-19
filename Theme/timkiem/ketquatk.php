@@ -4,7 +4,7 @@
 	$sanpham->execute();
 	$tongso_sp=$sanpham->rowCount();
 	/*tính số trang*/
-	$limit=1;/*số lượng sản phẩm sẽ hiển thị trên 1 trang*/
+	$limit=12;/*số lượng sản phẩm sẽ hiển thị trên 1 trang*/
 	$tongsotrang=ceil($tongso_sp/$limit);
 	if(isset($_GET['page'])){
 		$start=(((int) $_GET['page'])-1)*$limit;/*tính vị trí của sản phẩm đầu tiên sẽ hiển thị trong trang thứ X*/

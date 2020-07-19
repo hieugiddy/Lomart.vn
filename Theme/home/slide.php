@@ -11,6 +11,18 @@
 body{
 background: #f1f1f1
 }
+
+body::-webkit-scrollbar {
+    width: 1px;
+    background-color: #f1f1f1;
+} 
+body::-webkit-scrollbar-thumb {
+    background-color: #777;
+}
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
 	#slider-control img {
     margin: 40px auto !important;
 }
