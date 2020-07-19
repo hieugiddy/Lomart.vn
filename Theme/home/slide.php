@@ -215,7 +215,7 @@ float: right;
              
                       <?php
                         include('../connect.php');
-                        $hot=$conn->prepare('select * from khuyenmai');
+                        $hot=$conn->prepare('select * from khuyenmai order by stt DESC');
                         $hot->execute();
                         if($hot->rowCount()>0){
                           $i=1;

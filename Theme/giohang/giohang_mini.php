@@ -15,5 +15,5 @@
 	?>
 	</div>
 	
-	<br><a href="?Layout=baiviet&thanhtoan=1" id="thanhtoan">Mua ngay</a>
+	<br><a href="?Layout=baiviet&giohang=" id="thanhtoan">Mua ngay</a>
 </div>

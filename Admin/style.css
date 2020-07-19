@@ -174,7 +174,7 @@ input {
   border-radius: 5px;
   color: #000;
 }
-#theloaichinh td button{
+#theloaichinh td button,#theloaichinh .xoa{
   border: 1px solid #f1f1f1;
   background: #fff;
   padding: 5px 7px;
@@ -186,6 +186,7 @@ input {
   background: #900;
   color: #fff
 }
+
 @media (min-width: 576px){
 .modal-dialog {
     max-width: 100% !important;
@@ -196,4 +197,20 @@ input {
   background: #fff !important;
   color: #000 !important;
   border: none !important
+}
+.phantrang span,.phantrang a{
+  padding:5px 10px;
+  margin: 5px !important;
+  border-radius: 3px;
+  display: inline-block;
+}
+.phantrang span{
+  color: #000;
+  background: #fff;
+  border:1px solid #f1f1f1;
+}
+.phantrang a{
+  color: #fff;
+  background: #333;
+  border:1px solid #333;
 }

@@ -2,7 +2,7 @@
 	if(isset($_GET['loaisp']))
 	{
 		echo '<div class="row mt-4">';
-		$cmd='select chitietsanpham.maSP,tenSP,dongia,hinhanh from chitietsanpham,sanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTL="'.$_GET['loaisp'].'" order by maSP DESC limit 12';
+		$cmd='select chitietsanpham.maSP,tenSP,dongia,hinhanh from chitietsanpham,sanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTL='.$_GET['loaisp'].' order by maSP DESC limit 12';
         $hot=$conn->prepare($cmd);
         $hot->execute();
         if($hot->rowCount()>0){
@@ -30,7 +30,7 @@
 		$theloai=$conn->prepare('select maTL from theloai limit 1');
 		$theloai->execute();
 		$tl=$theloai->fetch(PDO::FETCH_ASSOC);
-		$cmd='select chitietsanpham.maSP,tenSP,dongia,hinhanh from chitietsanpham,sanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTL="'.$tl['maTL'].'" order by maSP DESC limit 12';
+		$cmd='select chitietsanpham.maSP,tenSP,dongia,hinhanh from chitietsanpham,sanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTL='.$tl['maTL'].' order by maSP DESC limit 12';
         $hot=$conn->prepare($cmd);
         $hot->execute();
         if($hot->rowCount()>0){

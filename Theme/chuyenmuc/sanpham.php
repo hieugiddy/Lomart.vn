@@ -3,12 +3,12 @@
 	if(isset($_GET['maTL'])){ /* kiểm tra có đang chọn thể loại thể loại nào ko*/
 		if(isset($_GET['maTLC'])){/*kiểm tra có đang chọn thể loại con nào ko- vd chọn thịt lợn trong Thịt & Cá*/
 			$sql_theloai='select * from chitiettheloai,theloai where chitiettheloai.maTL=theloai.maTL and chitiettheloai.maTLC="'.$_GET['maTLC'].'"';/*câu truy vấn lấy ra tên thể loại chính và tên thể loại con đang chọn*/
-			$sql_sp='select chitietsanpham.maSP,tenSP,hinhanh,dongia from sanpham,chitietsanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTLC="'.$_GET['maTLC'].'" order by maSP DESC';
+			$sql_sp='select chitietsanpham.maSP,tenSP,hinhanh,dongia from sanpham,chitietsanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTLC="'.$_GET['maTLC'].'" order by uutien DESC, maSP DESC';
 			/*câu truy vấn lấy ra danh sách sản phẩm thuộc thể loại con đang chọn*/
 		}
 		else{/*th ko chỉ chọn thể loại chính vd: chỉ chọn Tất cả sản phẩm Thịt & Cá*/
 			$sql_theloai='select tenTL from theloai where maTL="'.$_GET['maTL'].'"';/* lấy ra tên thể loại chính đang chọn*/
-			$sql_sp='select chitietsanpham.maSP,tenSP,hinhanh,dongia from sanpham,chitietsanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTL="'.$_GET['maTL'].'" order by maSP DESC';/*lấy ra danh sách sản phẩm thuộc thể loại chính đang chọn*/
+			$sql_sp='select chitietsanpham.maSP,tenSP,hinhanh,dongia from sanpham,chitietsanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maTL="'.$_GET['maTL'].'" order by uutien DESC, maSP DESC';/*lấy ra danh sách sản phẩm thuộc thể loại chính đang chọn*/
 		}
 		/*tiến hành hiển thị tên thể loại chính và thể loại con đang chọn - vd: Thịt & Cá > Thịt lợn*/
 		$theloai=$conn->prepare($sql_theloai);
@@ -29,7 +29,7 @@
 	}
 	else{/*th ko có thể loại nào đc chọn - ta hiển thị tất cả sản phẩm*/
 		echo '<h4>Tất cả sản phẩm</h4>';
-		$sql_sp='select chitietsanpham.maSP,tenSP,hinhanh,dongia from sanpham,chitietsanpham where chitietsanpham.maSP=sanpham.maSP order by maSP DESC';
+		$sql_sp='select chitietsanpham.maSP,tenSP,hinhanh,dongia from sanpham,chitietsanpham where chitietsanpham.maSP=sanpham.maSP order by uutien DESC, maSP DESC';
 	}
 	/* tìm tổng số sản phẩm*/
 	$sanpham=$conn->prepare($sql_sp);

@@ -1,6 +1,6 @@
 <?php
 	if(isset($_GET['loaisp']))
-		echo '<style>#'.$_GET['loaisp'].'{color:#fff;background:#000;border:0 !important}</style>';
+		echo '<style>#a'.$_GET['loaisp'].'{color:#fff;background:#000;border:0 !important}</style>';
 ?>
 <div class="mt-2">
 	<?php 
@@ -10,13 +10,13 @@
 			$i=1;
 			while($row=$list_menu->fetch(PDO::FETCH_ASSOC)){
 				if($i==1){
-					echo '<a href="?#dssanpham" id="'.$row['maTL'].'">'.$row['tenTL'].'</a>';
+					echo '<a href="?#dssanpham" id="a'.$row['maTL'].'">'.$row['tenTL'].'</a>';
 					if(!isset($_GET['loaisp']))
-						echo '<style>#'.$row['maTL'].'{color:#fff;background:#000;border:0 !important}</style>';
+						echo '<style>#a'.$row['maTL'].'{color:#fff;background:#000;border:0 !important}</style>';
 					$i=0;
 				}
 				else
-				echo '<a href="?loaisp='.$row['maTL'].'#dssanpham" id="'.$row['maTL'].'">'.$row['tenTL'].'</a>';
+				echo '<a href="?loaisp='.$row['maTL'].'#dssanpham" id="a'.$row['maTL'].'">'.$row['tenTL'].'</a>';
 			}
 	?>
 	

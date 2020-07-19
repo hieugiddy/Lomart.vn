@@ -15,7 +15,7 @@
 		$giohang_sl=0;
 ?>
 <div id="giohang_f">
-	<a href="?Layout=baiviet&thanhtoan=1">
+	<a href="?Layout=baiviet&giohang=">
 		<span class="btn bg-light-gray text-black btn-cart px-1"><i class="fa fa-shopping-cart"></i><span class="quantity"><?php echo $giohang_sl; ?></span></span>
 	</a>
 </div>

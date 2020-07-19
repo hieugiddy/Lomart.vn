@@ -12,25 +12,3 @@ echo '<iframe src="./Theme/giohang/getdiachi.php" frameborder="0" width="100%" h
     </div>
 </div>
 
-
-<script>
-	var sl = document.getElementsByName("soluong");
-	var dg= document.getElementsByClassName("tien-dg");
-	var tt= document.getElementsByClassName("tien-tt");
-  var tienhang=document.getElementById("tienhang");
-	var s=0;
-  for (var i = 0; i < sl.length; i++) {
-    tt[i].innerHTML=""+sl[i].value*dg[i].innerHTML;
-    s+=parseFloat(tt[i].innerHTML);
-  }
-    
-  tienhang.value =s;
-
-  function tinhtien(obj){
-    var maSP=obj.id;
-    var soluong=obj.value;
-    var str='./Theme/giohang/capnhatgiohang.php?id='+maSP+'&soluong='+soluong;
-    location.href=str;
-  }
-
-</script>

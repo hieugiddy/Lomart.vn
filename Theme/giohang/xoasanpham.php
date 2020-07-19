@@ -9,6 +9,7 @@ if(isset($_GET['id'])){
 				$_SESSION['sanpham_gh'][$i]="";
 				unset($_SESSION['tensanpham'][$i]);
 				unset($_SESSION['soluong'][$i]);
+				unset($_SESSION['dongia'][$i]);
 			}
 		}
 	}
@@ -20,6 +21,7 @@ else{
 			$_SESSION['sanpham_gh'][$i]="";
 			unset($_SESSION['tensanpham'][$i]);
 			unset($_SESSION['soluong'][$i]);
+			unset($_SESSION['dongia'][$i]);
 		}			
 	}
 }

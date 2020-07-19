@@ -6,7 +6,7 @@ $id=$_GET['id'];
 $sl=$_GET['soluong'];
 
 include('../connect.php');
-$getsl=$conn->prepare('select tenSP,soluong from chitietsanpham,sanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maSP="'.$id.'"');
+$getsl=$conn->prepare('select tenSP,soluong,dongia from chitietsanpham,sanpham where chitietsanpham.maSP=sanpham.maSP and sanpham.maSP="'.$id.'"');
 $getsl->execute();
 $rs=$getsl->fetch(PDO::FETCH_ASSOC);
 
@@ -24,6 +24,7 @@ if(isset($_SESSION['sanpham_gh'])){
 		$index=count($_SESSION['sanpham_gh']);
 		$_SESSION['sanpham_gh'][$index]=$id;
 		$_SESSION['tensanpham'][$index]=$rs['tenSP'];
+		$_SESSION['dongia'][$index]=$rs['dongia'];
 		$_SESSION['soluong'][$index]=(int)$sl;
 	}
 	else{
@@ -37,6 +38,7 @@ if(isset($_SESSION['sanpham_gh'])){
 else{
 	$_SESSION['sanpham_gh'][0]=$id;
 	$_SESSION['tensanpham'][0]=$rs['tenSP'];
+	$_SESSION['dongia'][0]=$rs['dongia'];
 	$_SESSION['soluong'][0]=$sl;
 }
 echo '

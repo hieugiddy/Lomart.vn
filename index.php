@@ -2,25 +2,40 @@
 ob_start();
 session_start();
 include('Theme/connect.php');
-	?>
+$info=$conn->prepare('select * from info');
+$info->execute();
+$kq_if=$info->fetch(PDO::FETCH_ASSOC);
+
+//tính lượt truy cập
+$info=$conn->prepare('select luottruycap from info');
+$info->execute();
+$view_c=$info->fetchcolumn();
+$view_n=(int)($view_c+1);
+
+$tangtruycap=$conn->prepare('update info set luottruycap='.$view_n);
+$tangtruycap->execute();
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 	<meta charset="UTF-8"/>
+	<meta name="description" content="<?php echo $kq_if['mota']; ?>">
+	<meta name="keywords" content="<?php echo $kq_if['tukhoa']; ?>">
+	<link rel="shortcut icon" type="image/png" href="<?php echo $kq_if['favicon']; ?>"/>
 	<title>
 	<?php
 		if(!isset($_GET['Layout']))
-			echo 'Lomart - Siêu thị Online';
+			echo $kq_if['tieude'];
 		else{
 			switch ($_GET['Layout']) {
 				case 'chuyenmuc':
-					echo 'Danh mục - Siêu thị Online';
+					echo 'Danh mục | '.$kq_if['tieude'];
 					break;
 				case 'baiviet':
-					echo 'Chi tiết sản phẩm - Siêu thị Online';
+					echo 'Chi tiết sản phẩm | '.$kq_if['tieude'];
 					break;
 				case 'timkiem':
-					echo 'Tìm kiếm sản phẩm - Siêu thị Online';
+					echo 'Tìm kiếm sản phẩm | '.$kq_if['tieude'];
 					break;
 			}
 		}

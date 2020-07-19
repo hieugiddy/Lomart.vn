@@ -1,18 +1,25 @@
-<?php 
-ob_start();
-session_start();
-      $_SESSION['thongtindonhang'][0]=$_GET['hoten'];
-      $_SESSION['thongtindonhang'][1]=$_GET['mail'];
-      $_SESSION['thongtindonhang'][2]=$_GET['address1'];
-      $_SESSION['thongtindonhang'][3]=$_GET['address2'];
-      $_SESSION['thongtindonhang'][4]=$_GET['sodt'];
-      $_SESSION['thongtindonhang'][5]=((int) $_GET['tongtien'])/20000;
+<?php
+      ob_start();
+      session_start();
+
+      include('../connect.php');
+      /*tinh so don hang*/
+      $stmt=$conn->prepare('select count(maDH) from donhang');
+      $stmt->execute();
+      $_SESSION['maDH']='DH'.($stmt->fetchcolumn()+1);
+
+      $_SESSION['hoten']=$_GET['hoten'];
+      $_SESSION['email']=$_GET['mail'];
+      ($_SESSION['value']=='hn')?($_SESSION['chin']='Hà Nội'):(($_SESSION['value']=='dn')?($_SESSION['chin']='Đà Nẵng'):($_SESSION['chin']='Hồ Chí Minh'));
+      $_SESSION['diachi']=$_GET['address2'];
+      $_SESSION['sodt']=$_GET['sodt'];
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-	<title>Thanh toán qua Paypal</title>
+	<title>Xử lý thanh toán</title>
       <style>
             #wrapper{
                   width: 500px;
@@ -51,15 +58,39 @@ session_start();
 <body>
       <div id="wrapper">
             <?php
-                  if($_GET['hinhthuc']=="01")
-                        echo '
+                  
+                  $cmd='insert into donhang(maDH,hoten,email,chinhanh,DiaChiNhanHang,SoDT) value("'.$_SESSION['maDH'].'","'.$_SESSION['hoten'].'","'.$_SESSION['email'].'","'.$_SESSION['chin'].'","'.$_SESSION['diachi'].'","'.$_SESSION['sodt'].'")';
+                  $themdonhang=$conn->prepare($cmd);
+                  $themdonhang->execute();
+                  for($i=0;$i<count($_SESSION['sanpham_gh']);++$i){
+                        if($_SESSION['sanpham_gh'][$i]!=""){
+                              $tt=$_SESSION['soluong'][$i]*$_SESSION['dongia'][$i];
+                              $chen = $conn->prepare('INSERT INTO chitietdonhang (maDH, maSP, soluong,thanhtien) values ("'.$_SESSION['maDH'].'", '.$_SESSION['sanpham_gh'][$i].', '.$_SESSION['soluong'][$i].', '.$tt.')');
+                              $chen->execute();
+
+                              $update = $conn->prepare('UPDATE chitietsanpham set soluong=soluong-'.$_SESSION['soluong'][$i].' where maSP='.$_SESSION['sanpham_gh'][$i]);
+                              $update->execute();
+                        }
+                  }
+                  unset($_SESSION['sanpham_gh']);
+                  unset($_SESSION['soluong']);
+                  unset($_SESSION['dongia']);
+                  unset($_SESSION['tensanpham']);
+                  unset($_SESSION['maDH']);
+                  unset($_SESSION['hoten']);
+                  unset($_SESSION['email']);
+                  unset($_SESSION['chin']);
+                  unset($_SESSION['diachi']);
+                  unset($_SESSION['sodt']);
+                  echo '
                   <script>
-                        alert("Thanh toán thành công");
+                        alert("Đặt hàng thành công");
                         location.href=\'/Lomart.vn\';
                   </script>';
-                  else
-                        include('paypal.php');
             ?>
       </div>
 </body>
 </html>
+<?php
+      $conn=null;
+?>

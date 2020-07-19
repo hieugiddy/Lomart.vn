@@ -1,5 +1,5 @@
 <br>
-<form action="./Theme/Tai_Khoan/xuly_dangnhap.php" method="post">
+<form action="/Lomart.vn/Theme/Tai_Khoan/xuly_dangnhap.php" method="post">
  
    <!-- Vertical -->
    <div class="form-group">

@@ -1,20 +1,22 @@
 <?php
- if($_POST['tentk']!="" && $_POST['mk']!=""){
-	include('../connect.php');
-	$cmd='insert into taikhoan(username,password) value("'.$_POST['tentk'].'","'.$_POST['mk'].'")';
-	echo '<script>alert(\'Đăng ký thành công, xin mời đăng nhập\');</script>';
-}
- else
- 	echo '<script>alert(\'Đăng ký không thành công\');</script>';
- echo '<script>location.href=\'/Lomart.vn\';</script>';
+ 	include('../connect.php');
+ 	if($_POST['username']!="" and $_POST['matkhau']!=""){
+	 	$ktra=$conn->prepare('select * from taikhoan where username="'.$_POST['username'].'"');
+	 	$ktra->execute();
+	 	if($ktra->rowCount()!=0)
+ 			echo '<font color="red">Username đã tồn tại trong hệ thống!</font>';
+ 		else{
+ 			$join=$conn->prepare('insert into taikhoan(username,password) value("'.$_POST['username'].'","'.$_POST['matkhau'].'")');
+	 		$join->execute();
+	 		echo '<font color="green">Đăng ký thành công, xin mời đăng nhập!</font>';
+ 		}
+
+	}
+	else{
+		if($_POST['username']=="")
+			echo '<font color="red">Vui lòng nhập Username!</font>';
+		else
+			echo '<font color="red">Vui lòng nhập Password!</font>';
+	}
+ 	$conn=null;
 ?>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-	<meta charset="UTF-8">
-	<title>Đang ký tài khoản</title>
-</head>
-<body>
-	
-</body>
-</html>

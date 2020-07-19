@@ -14,13 +14,9 @@
 	else{
 		/*thiết lập cách trả về dữ liệu - FETCH_ASSOC trả về dữ liệu dạng mảng với key là tên cột trong bảng*/
 		$kq=$stmt->fetch(PDO::FETCH_ASSOC);
-		echo '<script>
-		if (typeof(Storage) !== "undefined") {
-			localStorage.setItem("user","'.$user.'");
-			localStorage.setItem("pw","'.$pw.'");
-			localStorage.setItem("quyenhan","'.$kq['quyen'].'");
-		}
-	alert(\'Đăng nhập thành công\');</script>';
+		setcookie("user", $user, time()+3600, "/","", 0);
+		setcookie("quyenhan", $kq['quyen'], time()+3600, "/","", 0);
+		echo '<script>alert(\'Đăng nhập thành công\');</script>';
 	}
 	$conn=null;
 	echo '<script>location.href=\'/Lomart.vn\';</script>'

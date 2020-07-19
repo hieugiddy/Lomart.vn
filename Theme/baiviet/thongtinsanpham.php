@@ -19,6 +19,6 @@
 	</div>
 </div>		
 <h4 class="mt-5 mb-3" style="margin-left: -10px">Mô tả sản phẩm</h4>
-<div id="gt-ctsp" class="row text-justify">
+<div id="gt-ctsp" class="row text-justify d-block px-4">
 <?php echo $info['mota']; ?>
 </div>

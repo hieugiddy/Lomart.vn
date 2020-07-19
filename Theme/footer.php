@@ -117,7 +117,7 @@ for (i = 0; i < dropdown.length; i++) {
 		<div class="row">
 		<div class="col-12 col-sm-6 mx-auto col-md-7 col-lg-4 gt px-2 px-md-3 px-xl-4 mb-5">
 			<h3>Giới thiệu</h3>
-			<p>Lomart - Siêu thị thu nhỏ, Đặt mua rau thịt cá trực tuyến mang đến tận nới cho bạn. Không cần ra ngoài mà vẫn có đồ ăn ngon, Lomart giúp bạn tiết kiệm thời gian dành cho những công việc khác.</p>
+			<p><?php echo $kq_if['mota']; ?></p>
 			<img src="https://static.wapmaker.net/5e0de66efce1810fd09a26c9/logobct_580132795da142c79ffb89b595168de6.png" alt="" width="140px" />
 
 		</div>
@@ -156,31 +156,8 @@ for (i = 0; i < dropdown.length; i++) {
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 
-<div class="modal" id="dk-tuyendung"
-   data-backdrop="static"
-   data-keyboard="true"
-   tabindex="-1"
-   aria-labelledby="myModalLabel"
-   aria-hidden="true">
-   <div class="modal-dialog">
-      <div class="modal-content">
-         <!-- Modal Header -->
-         <div class="modal-header">
-            <h4 class="modal-title">Đăng ký làm Shiper</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-         </div>
-         <!-- Modal body -->
-         <div class="modal-body">
-            Modal body..
-         </div>
-         <!-- Modal footer -->
-         <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-         </div>
-      </div>
-   </div>
-</div>
 
 
 <div class="modal" id="myModal"
