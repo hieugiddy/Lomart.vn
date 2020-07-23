@@ -2,15 +2,15 @@
 -- version 3.2.0.1
 -- http://www.phpmyadmin.net
 --
--- Serveur: localhost
--- Généré le : Dim 19 Juillet 2020 à 14:15
--- Version du serveur: 5.1.36
--- Version de PHP: 5.3.0
+-- Host: localhost
+-- Generation Time: Jul 23, 2020 at 02:00 PM
+-- Server version: 5.1.36
+-- PHP Version: 5.3.0
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 --
--- Base de données: `sieuthi`
+-- Database: `sieuthi`
 --
 CREATE DATABASE `sieuthi` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `sieuthi`;
@@ -18,7 +18,7 @@ USE `sieuthi`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `chitietdonhang`
+-- Table structure for table `chitietdonhang`
 --
 
 CREATE TABLE IF NOT EXISTS `chitietdonhang` (
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `chitietdonhang` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `chitietdonhang`
+-- Dumping data for table `chitietdonhang`
 --
 
 INSERT INTO `chitietdonhang` (`maDH`, `maSP`, `soLuong`, `thanhtien`) VALUES
@@ -41,12 +41,13 @@ INSERT INTO `chitietdonhang` (`maDH`, `maSP`, `soLuong`, `thanhtien`) VALUES
 ('DH3', 12, 1, '125000'),
 ('DH4', 7, 2, '74000'),
 ('DH5', 10, 2, '526000'),
-('DH5', 11, 1, '160000');
+('DH5', 11, 1, '160000'),
+('DH6', 71, 2, '588000');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `chitietsanpham`
+-- Table structure for table `chitietsanpham`
 --
 
 CREATE TABLE IF NOT EXISTS `chitietsanpham` (
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `chitietsanpham` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=75 ;
 
 --
--- Contenu de la table `chitietsanpham`
+-- Dumping data for table `chitietsanpham`
 --
 
 INSERT INTO `chitietsanpham` (`maSP`, `dongia`, `moTa`, `soluong`, `hinhanh`, `hot`, `uutien`) VALUES
@@ -123,7 +124,7 @@ INSERT INTO `chitietsanpham` (`maSP`, `dongia`, `moTa`, `soluong`, `hinhanh`, `h
 (68, '336000', '<p>Rượu Jagermeister (rượu thảo mộc jagermeister) l&agrave; loại rượu mạnh c&oacute; xuất xứ từ Đức. Được l&agrave;m từ 56 loại thảo mộc, tr&aacute;i c&acirc;y, rể c&acirc;y như: vỏ cam, chanh, cam thảo, hồi, nghệ t&acirc;y, gừng quả c&acirc;y b&aacute;ch x&ugrave;,... v&agrave; nh&acirc;n s&acirc;m.</p>\r\n', 90, '/Lomart.vn/img/Jagermeister.jpg', 0, 0),
 (69, '289000', '<p>Rượu Kahl&uacute;a l&agrave; loại rượu m&ugrave;i hương c&agrave; ph&ecirc; rất nổi tiếng của Mexico, kh&aacute; ngọt v&agrave; thật sự kh&aacute;c biệt với hương vị c&agrave; ph&ecirc;.</p>\r\n', 78, '/Lomart.vn/img/Kahlu.jpg', 0, 0),
 (70, '373000', '<p>Rượu Midori Melon, đ&acirc;y l&agrave; loại rượu m&ugrave;i dưa (nhiều loại dưa) đặc sắc v&agrave; nổi tiếng khắp thế giới của h&atilde;ng Suntory, Nhật</p>\r\n', 65, '/Lomart.vn/img/2.jpg', 1, 0),
-(71, '294000', '<p>Rượu Rhum N&acirc;u Captain Morgan</p>\r\n', 122, '/Lomart.vn/img/ruo2.jpg', 1, 0),
+(71, '294000', '<p>Rượu Rhum N&acirc;u Captain Morgan</p>\r\n', 120, '/Lomart.vn/img/ruo2.jpg', 1, 0),
 (72, '16553', '<p>04fi23 - Sữa Dinh Dưỡng Vinamilk &Iacute;t Đường - Bịch 220ml - 3 Bịch</p>\r\n', 300, '/Lomart.vn/img/sua1.jpg', 0, 0),
 (73, '42356', '<p>04wo10 - Sữa Tươi Tiệt Tr&ugrave;ng Vinamilk 100% Organic Kh&ocirc;ng Đường - Hộp Giấy 1l</p>\r\n', 322, '/Lomart.vn/img/sua2.jpg', 0, 0),
 (74, '510000', '<p>04wo10_thg - Th&ugrave;ng 12 Hộp Sữa Tươi Tiệt Tr&ugrave;ng 1l Vinamilk 100% Organic Kh&ocirc;ng Đường</p>\r\n', 222, '/Lomart.vn/img/sua3.jpg', 1, 0);
@@ -131,7 +132,7 @@ INSERT INTO `chitietsanpham` (`maSP`, `dongia`, `moTa`, `soluong`, `hinhanh`, `h
 -- --------------------------------------------------------
 
 --
--- Structure de la table `chitiettheloai`
+-- Table structure for table `chitiettheloai`
 --
 
 CREATE TABLE IF NOT EXISTS `chitiettheloai` (
@@ -143,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `chitiettheloai` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=54 ;
 
 --
--- Contenu de la table `chitiettheloai`
+-- Dumping data for table `chitiettheloai`
 --
 
 INSERT INTO `chitiettheloai` (`maTLC`, `maTL`, `tenTLC`) VALUES
@@ -174,7 +175,7 @@ INSERT INTO `chitiettheloai` (`maTLC`, `maTL`, `tenTLC`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `donhang`
+-- Table structure for table `donhang`
 --
 
 CREATE TABLE IF NOT EXISTS `donhang` (
@@ -189,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `donhang` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `donhang`
+-- Dumping data for table `donhang`
 --
 
 INSERT INTO `donhang` (`maDH`, `hoten`, `email`, `chinhanh`, `DiaChiNhanHang`, `SoDT`, `ngaydat`) VALUES
@@ -197,12 +198,13 @@ INSERT INTO `donhang` (`maDH`, `hoten`, `email`, `chinhanh`, `DiaChiNhanHang`, `
 ('DH2', 'Hiếu', 'thamnguyen1500@gmail.com', 'Đà Nẵng', 'Tân Bình, Hồ Chí Minh, Việt Nam', '0368376081', '2020-07-17 20:22:27'),
 ('DH3', 'Quan', 'thamnguyen1500@gmail.com', 'Đà Nẵng', '763 Trường Chinh, Tây Thạnh, Tân Phú, Hồ Chí Minh,', '0368376081', '2020-07-17 20:24:41'),
 ('DH4', 'Phạm Văn Trí', 'tripham@gmail.com', 'Hồ Chí Min', '75 Nguyễn Sỹ Sách, Phường 15, Tân Bình, Hồ Chí Minh, Việt Nam', '0909441553', '2020-07-18 22:25:15'),
-('DH5', 'Hoàng Phi Hồng', 'phihong@gmail.com', 'Đà Nẵng', '40 Đống Đa, Thạch Thang, Hải Châu, Đà Nẵng, Việt Nam', '0368376081', '2020-07-19 11:13:43');
+('DH5', 'Hoàng Phi Hồng', 'phihong@gmail.com', 'Đà Nẵng', '40 Đống Đa, Thạch Thang, Hải Châu, Đà Nẵng, Việt Nam', '0368376081', '2020-07-19 11:13:43'),
+('DH6', 'Ngô Gia Tự', 'giatu@gmail.com', 'Đà Nẵng', '12 Ông Ích Khiêm, Thanh Bình, Q. Hải Châu, Đà Nẵng, Việt Nam', '0920211123', '2020-07-19 21:25:40');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `info`
+-- Table structure for table `info`
 --
 
 CREATE TABLE IF NOT EXISTS `info` (
@@ -215,16 +217,16 @@ CREATE TABLE IF NOT EXISTS `info` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `info`
+-- Dumping data for table `info`
 --
 
 INSERT INTO `info` (`tieude`, `mota`, `tukhoa`, `favicon`, `logo`, `luottruycap`) VALUES
-('Lomart - Siêu Thị Online', 'Lomart - Siêu thị thu nhỏ, Đặt mua rau thịt cá trực tuyến mang đến tận nới cho bạn. Không cần ra ngoài mà vẫn có đồ ăn ngon, Lomart giúp bạn tiết kiệm thời gian dành cho những công việc khác.', 'lomart, sieu thi online, mua sam online,lomart, sieu thi online, mua sam online', '/Lomart.vn/img/spkt.png', '/Lomart.vn/img/logo-lomart.png', 203);
+('Lomart - Siêu Thị Online', 'Lomart - Siêu thị thu nhỏ, Đặt mua rau thịt cá trực tuyến mang đến tận nới cho bạn. Không cần ra ngoài mà vẫn có đồ ăn ngon, Lomart giúp bạn tiết kiệm thời gian dành cho những công việc khác.', 'lomart, sieu thi online, mua sam online,lomart, sieu thi online, mua sam online', '/Lomart.vn/img/spkt.png', '/Lomart.vn/img/logo-lomart.png', 281);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `khuyenmai`
+-- Table structure for table `khuyenmai`
 --
 
 CREATE TABLE IF NOT EXISTS `khuyenmai` (
@@ -236,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `khuyenmai` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
--- Contenu de la table `khuyenmai`
+-- Dumping data for table `khuyenmai`
 --
 
 INSERT INTO `khuyenmai` (`stt`, `tenkm`, `hinhanh`, `noidung`) VALUES
@@ -247,7 +249,7 @@ INSERT INTO `khuyenmai` (`stt`, `tenkm`, `hinhanh`, `noidung`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sanpham`
+-- Table structure for table `sanpham`
 --
 
 CREATE TABLE IF NOT EXISTS `sanpham` (
@@ -261,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=75 ;
 
 --
--- Contenu de la table `sanpham`
+-- Dumping data for table `sanpham`
 --
 
 INSERT INTO `sanpham` (`maSP`, `tenSP`, `maTL`, `maTLC`) VALUES
@@ -331,7 +333,7 @@ INSERT INTO `sanpham` (`maSP`, `tenSP`, `maTL`, `maTLC`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `taikhoan`
+-- Table structure for table `taikhoan`
 --
 
 CREATE TABLE IF NOT EXISTS `taikhoan` (
@@ -342,17 +344,18 @@ CREATE TABLE IF NOT EXISTS `taikhoan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `taikhoan`
+-- Dumping data for table `taikhoan`
 --
 
 INSERT INTO `taikhoan` (`username`, `password`, `quyen`) VALUES
 ('admin', 'admin', 1),
+('hieu', '12345', 0),
 ('gunthan', 'Anhyeuem123@', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `theloai`
+-- Table structure for table `theloai`
 --
 
 CREATE TABLE IF NOT EXISTS `theloai` (
@@ -362,7 +365,7 @@ CREATE TABLE IF NOT EXISTS `theloai` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
 
 --
--- Contenu de la table `theloai`
+-- Dumping data for table `theloai`
 --
 
 INSERT INTO `theloai` (`maTL`, `tenTL`) VALUES
